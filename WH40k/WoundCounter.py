@@ -2,7 +2,7 @@ import random
 class Dice():
     """ The game WH40k is a D6 base game. This class will simulate dice rolling."""
 
-    def __init__(self, dice, hit, wound, save, top=6, dice_hit = [], dice_wound = [], dice_saves = []):
+    def __init__(self, dice, hit, wound, save, top=6,) :
         self.dice = [random.randint(1, top) for die in range(dice)]
         self.hit = hit
         self.save = save
