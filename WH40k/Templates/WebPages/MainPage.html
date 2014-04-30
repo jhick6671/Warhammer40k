@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Warhammer 40k Fan Site</title>
+</head>
+<body>
+<center>
+<img src="{% static "WH40k/Warhammer40k.jpg" %}" alt="Warhammer Title" width="1500" height="150">
+</center>
+    <h2>Armies</h2>
+    <ul>
+        {% for races in Army %}
+            <li>Name: <a href="/Army/{{ races.pk }}">{{ races.name }}</a>
+                Symbol: <a href="/Army/{{ races.pk }}">{{ races.symbols }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
