@@ -1,9 +1,12 @@
 from django.conf.urls import patterns, include, url
-from .views import WoundCounterCreate
+from .views import MainPageView, HobbyPageView, ArmiesList, WoundCounterCreate
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'gisc2.views.home', name='home'),
-    # url(r'^gisc2/', include('gisc2.foo.urls')),
-     url(r'^woundcounter$', WoundCounterCreate.as_view(), name='woundcounter),
+
+    url(r'mainpage$', MainPageView.as_view(), name='mainpage'),
+    url(r'hobbypage$', HobbyPageView.as_view(), name='hobbypage'),
+    url(r'armiespage$', ArmiesList.as_view(), name='armiespage'),
+    url(r'^woundcounter$', WoundCounterCreate.as_view(), name='woundcounter'),
+
+    
 )
