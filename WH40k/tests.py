@@ -7,6 +7,8 @@ Replace this with more appropriate tests for your application.
 import random
 
 from django.test import TestCase
+from django.core.urlresolvers import resolve, reverse
+from .views import MainPageView, HobbyPageView, ArmiesList
 from .WoundCounter import Dice
 random.seed(0)
 class ToHitTest(TestCase):
@@ -24,6 +26,22 @@ class ToWoundTest(TestCase):
         # random.seed(0)
         d = Dice(20, 4, 4, 3)
         self.assertEqual(d.ToWound(),10)
+
+class UrlTest(TestCase):
+    def test_MainPage_url(self):
+        MainPage = resolve(reverse('WebPages:MainPage'))
+        return self.assertEqual(MainPage.func.__name__,
+                                MainPageView.__name__)
+
+    def test_HobbyPage_url(self):
+        HobbyPage = resolve(reverse('WebPages:HobbyPage'))
+        return self.assertEqual(HobbyPage.func.__name__,
+                                HobbyPageView.__name__)
+
+    def test_ArmiesPage_url(self):
+        ArmiesPage = resolve(reverse('WebPages:ArmiesPage'))
+        return self.assertEqual(ArmiesPage.func.__name__,
+                                ArmiesList.__name__)
 
 class WoundsDealtTest(TestCase):
     def test_wound_counter(self):
