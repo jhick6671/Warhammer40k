@@ -3,18 +3,26 @@
 <html>
 <head>
     <title>Warhammer 40k Fan Site</title>
+<style>
+h2 {font-size: 300%}
+ul {font-size: 200%}
+</style>
 </head>
 <body>
 <center>
 <img src="{% static "WH40k/Warhammer40k.jpg" %}" alt="Warhammer Title" width="1500" height="150">
 </center>
-    <h2>Armies</h2>
+    <h2><big>Armies</big></h2>
     <ul>
-        {% for races in Army %}
-            <li>Name: <a href="/Army/{{ races.pk }}">{{ races.name }}</a>
-                Symbol: <a href="/Army/{{ races.pk }}">{{ races.symbols }}</a>
+        {% for races in armies %}
+            <li>{{ races.name }}
+                <a href="{% url "WH40k:army" pk=races.pk %}">
+                <img src="{{ MEDIA_URL }}{{ races.symbols }}" width="{{ races.template_width }}" height="{{ races.template_height }}">
+                </a>
             </li>
         {% endfor %}
     </ul>
+    <h3>Wound Counter</h3>
 </body>
 </html>
+

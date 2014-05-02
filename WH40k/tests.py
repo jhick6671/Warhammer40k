@@ -9,7 +9,6 @@ from django.test import TestCase
 from django.core.urlresolvers import resolve, reverse
 from .views import MainPageView, HobbyPageView, ArmiesList
 
-
 class UrlTest(TestCase):
     def test_MainPage_url(self):
         MainPage = resolve(reverse('WebPages:MainPage'))

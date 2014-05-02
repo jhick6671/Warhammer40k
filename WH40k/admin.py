@@ -6,3 +6,4 @@ from .models import Army
 # admin.site.register(WoundCounter)
 
 admin.site.register(Army)
+

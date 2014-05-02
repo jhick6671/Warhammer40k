@@ -1,9 +1,18 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>{{ Armies.name }}</title>
+<style>
+    p {text-indent: 50px}
+    h1 {text-align: center}
+</style>
 </head>
 <body>
-
+    <h1>{{ Armies.name }}</h1>
+<p>{{ Armies.description }}</p>
+    <h2><a href="{{ Armies.units }}">Units</a></h2>
+<img src="{{ MEDIA_URL }}{{ Armies.symbols }}"width="{{ races.template_width }}" height="{{ races.template_height }}">
 </body>
 </html>
+

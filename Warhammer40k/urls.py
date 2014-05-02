@@ -1,4 +1,6 @@
 from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -14,5 +16,5 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'', include('WH40k.urls', namespace='WebPages')),
-)
+    url(r'', include('WH40k.urls', namespace='WH40k')),
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
