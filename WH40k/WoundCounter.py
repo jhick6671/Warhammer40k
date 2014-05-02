@@ -29,24 +29,24 @@ class Dice():
         saved = len([die for die in self.dice if die >= self.save])
         return len(self.dice) - saved
 
-def statistics(runtime = 100):
-    """ In this section we want the program to run X amount of times and produce statistics from the results. To keep it
-    simple we just want to see the maximum, minimum, and average for hit, wound and saved."""
-    count = 0
-    results = []
-    while count < runtime:
-        d = Dice(20,4,4,3)
-        results.append((d.ToHit(), d.ToWound(), d.WoundsDealt()))
-        count += 1
-
-    print("The maximum number of hits:" + str(max([r[0] for r in results])))
-    print("The minimum number of hits:" + str(min([r[0] for r in results])))
-    print("The average number of hits:" + str(sum([r[0] for r in results])/len([r[0] for r in results])))
-    print("The maximum number of wounds:" + str(max([r[1] for r in results])))
-    print("The minimum number of wounds:" + str(min([r[1] for r in results])))
-    print("The average number of wounds:" + str(sum([r[1] for r in results])/len([r[1] for r in results])))
-    print("The maximum number of saves:" + str(max([r[2] for r in results])))
-    print("The minimum number of saves:" + str(min([r[2] for r in results])))
-    print("The average number of saves:" + str(sum([r[2] for r in results])/len([r[2] for r in results])))
-
-statistics()
+# def statistics(runtime = 100):
+#     """ In this section we want the program to run X amount of times and produce statistics from the results. To keep it
+#     simple we just want to see the maximum, minimum, and average for hit, wound and saved."""
+#     count = 0
+#     results = []
+#     while count < runtime:
+#         d = Dice(20,4,4,3)
+#         results.append((d.ToHit(), d.ToWound(), d.WoundsDealt()))
+#         count += 1
+#
+#     print("The maximum number of hits:" + str(max([r[0] for r in results])))
+#     print("The minimum number of hits:" + str(min([r[0] for r in results])))
+#     print("The average number of hits:" + str(sum([r[0] for r in results])/len([r[0] for r in results])))
+#     print("The maximum number of wounds:" + str(max([r[1] for r in results])))
+#     print("The minimum number of wounds:" + str(min([r[1] for r in results])))
+#     print("The average number of wounds:" + str(sum([r[1] for r in results])/len([r[1] for r in results])))
+#     print("The maximum number of saves:" + str(max([r[2] for r in results])))
+#     print("The minimum number of saves:" + str(min([r[2] for r in results])))
+#     print("The average number of saves:" + str(sum([r[2] for r in results])/len([r[2] for r in results])))
+#
+# statistics()

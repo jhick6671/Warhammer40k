@@ -12,6 +12,9 @@ class WoundCounter(models.Model):
                                     self.wound,
                                     self.saves)
 
+    def get_absolute_url(self):
+        return '/woundcounter/results/{}'.format(self.pk)
+
 class Army(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField(max_length=None)
