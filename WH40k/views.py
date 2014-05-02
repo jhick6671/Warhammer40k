@@ -4,7 +4,7 @@ from .models import WoundCounter, Army
 
 class WoundCounterCreate(CreateView):
     model = WoundCounter
-    template_name = 'WH40k/Wound Counter.html'
+    template_name = 'WH40k/WoundCounter.html'
 
 class MainPageView(generic.TemplateView):
     template_name = 'WebPages/MainPage.html'
