@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wound Counter</title>
+</head>
+<h2 style="background-color:darkgrey;">Wounds Calculator for Warhammer 40k</h2>
+<body style="background-color:darkgrey;">
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create" />
+</form>
+<p style=font-size:20px;"> Example (shooting): A 10 model unit of Necron Warriors shooting at Space Marines at a distance of 12" or less would get 20
+dice.<br> The Necron Warriors would need 3+ to hit, 4+ to wound, and the Space Marines would get a 3+ save vs the Warriors shots.<br>
+The inputs would be 20 for dice, 3 for hit, 4 for wound and 3 for saves</p>
+<p style=font-size:20px;"> Example (close combat): A 5 model unit of Space Marine Terminators are swing against Necron Warriors would get 10 dice.
+<br>They would need 4+ to hit, 2+ to wound, and the Necrons Warriors would get no saves.<br>
+The inputs would be 10 for dice, 4 for hit, 2 for wound and 7 for saves</p>
+</body>
+</html>
