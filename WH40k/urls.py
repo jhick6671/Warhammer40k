@@ -7,5 +7,5 @@ urlpatterns = patterns('',
     url(r'hobbypage$', HobbyPageView.as_view(), name='hobbypage'),
     url(r'armies/(?P<pk>\d+)$', ArmiesList.as_view(), name='army'),
     url(r'^woundcounter$', WoundCounterCreate.as_view(), name='woundcounter'),
-    url(r'^woundcounter/results/(?P<pk>\d+)$', WoundResults.as_view(),
+    url(r'^woundcounter/results/(?P<pk>\d+)$', WoundResults.as_view()),
 )
